@@ -37,11 +37,12 @@ public class Usuario implements UserDetails {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "usuario_acesso",
             uniqueConstraints = @UniqueConstraint(
-                    columnNames = {"usuario_id", "acesso_id"}, name = "unique_acesso_user"),
-    joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id", table = "usuario",
-            unique = false, foreignKey = @ForeignKey(name = "usuario_fk", value = ConstraintMode.CONSTRAINT)),
-    inverseJoinColumns = @JoinColumn(name = "acesso_id", unique = false, referencedColumnName = "id", table = "acesso",
-            foreignKey = @ForeignKey(name = "acesso_fk", value = ConstraintMode.CONSTRAINT) ))
+                    columnNames = {"usuario_id", "acesso_id"},
+                    name = "unique_acesso_user"),
+            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id", table = "usuario",
+                    unique = false, foreignKey = @ForeignKey(name = "usuario_fk", value = ConstraintMode.CONSTRAINT)),
+            inverseJoinColumns = @JoinColumn(name = "acesso_id", unique = false, referencedColumnName = "id", table = "acesso",
+                    foreignKey = @ForeignKey(name = "acesso_fk", value = ConstraintMode.CONSTRAINT) ))
     private List<Acesso> acessos;
 
     /* são os acessos, ou seja ROLE_ADMIN, ROLE_SECRETARIO, ROLE_FINANCEIRO */
