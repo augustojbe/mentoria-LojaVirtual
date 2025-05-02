@@ -1,5 +1,6 @@
 package com.augustojbe.lojaVirtual.model;
 
+import com.augustojbe.lojaVirtual.enums.TipoEndereco;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,6 +31,8 @@ public abstract class Pessoa {
 
     @OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Endereco> enderecos = new ArrayList<Endereco>();
+
+
 
     @Override
     public boolean equals(Object o) {
