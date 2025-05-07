@@ -4,6 +4,7 @@ import com.augustojbe.lojaVirtual.enums.TipoEndereco;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,7 +16,7 @@ import java.util.Objects;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @SequenceGenerator(name = "seq_pessoa", sequenceName = "seq_pessoa", initialValue = 1, allocationSize = 1)
-public abstract class Pessoa {
+public abstract class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
