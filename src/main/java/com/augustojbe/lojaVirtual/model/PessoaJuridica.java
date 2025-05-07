@@ -18,9 +18,10 @@ public class PessoaJuridica extends Pessoa{
 
     private static final long serialVersionUID = 1L;
 
+    @Column(nullable = false)
     private String cnpj;
 
-    @Column(name = "insc_estadual")
+    @Column(name = "insc_estadual", nullable = false)
     private String inscEstadual;
 
     @Column(name = "insc_municipal")
@@ -29,6 +30,7 @@ public class PessoaJuridica extends Pessoa{
     @Column(name = "nome_fantasia")
     private String nomeFantasia;
 
+    @Column(nullable = false)
     private String razaoSocial;
 
     private String categoria;

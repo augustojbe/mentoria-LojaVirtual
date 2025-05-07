@@ -23,10 +23,10 @@ public class ImagemProduto implements Serializable {
     private Long id;
 
 
-    @Column(name = "imagem_original", columnDefinition = "text")
+    @Column(name = "imagem_original", columnDefinition = "text", nullable = false)
     private String imagemOriginal;
 
-    @Column(name = "imagem_miniatura", columnDefinition = "text")
+    @Column(name = "imagem_miniatura", columnDefinition = "text", nullable = false)
     private String imagemMiniatura;
 
     @ManyToOne(targetEntity = Produto.class)

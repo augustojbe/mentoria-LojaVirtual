@@ -21,6 +21,7 @@ public class NotaItemProduto implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_nota_fiscal_compra" )
     private Long id;
 
+    @Column(nullable = false)
     private Double quantidade;
 
     @ManyToOne(targetEntity = NotaFiscalCompra.class)

@@ -24,7 +24,9 @@ public class StatusRastreio implements Serializable {
     @Column(name = "centro_distribuicao")
     private String centroDistribuicao;
 
+
     private String cidade;
+
 
     private String estado;
 
